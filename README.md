@@ -1,68 +1,219 @@
-# ✦ Portfolix — GitHub Portfolio Intelligence
 
-**Turn your GitHub activity into actionable career insights.**
+<div align="center">
 
-Portfolix is a developer-focused platform that analyzes public GitHub profiles and repositories to help developers understand their strengths, evaluate role readiness, identify skill gaps, and discover practical ways to improve their portfolios.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:10002B,45:5B21B6,100:2563EB&height=220&section=header&text=PORTFOLIX&fontSize=52&fontColor=FFFFFF&fontAlignY=38&desc=GitHub%20Portfolio%20Intelligence%20Platform&descAlignY=60&descSize=17" width="100%" />
 
-> 🚧 **Project Status: Work in Progress** — Core functionality is implemented, initial tests have passed, and further improvements are ongoing.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=17&pause=1200&color=A78BFA&center=true&vCenter=true&width=650&lines=Analyze+your+developer+portfolio;Explore+role+readiness;Understand+company+fit;Build+a+smarter+learning+roadmap" alt="Portfolix typing animation" />
 
-## ✨ Features
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+</p>
 
-- **GitHub Profile Analysis** — Analyze public profile information and repository metadata.
-- **Portfolio Insights** — Explore development activity, repository signals, and technology usage.
-- **Role Readiness** — Assess portfolio alignment with roles such as Python Developer, Software Engineer, AI/ML Engineer, and Frontend Developer.
-- **Skill Gap Detection** — Identify areas where your portfolio could better demonstrate relevant skills.
-- **Company-Specific Analysis** — Compare portfolio signals against configurable company and role expectations.
-- **Personalized Roadmaps** — Get actionable suggestions for improving your GitHub portfolio.
-- **Gemini-Powered Insights** — Add AI-generated analysis using Google's Gemini API, with rule-based fallback support.
-- **Responsive Interface** — A modern React interface backed by a FastAPI service.
+**Turn your GitHub profile into actionable developer insights.**
 
-## 🛠️ Tech Stack
+[Features](#-key-features) •
+[Architecture](#-system-architecture) •
+[Setup](#-getting-started) •
+[API](#-api-endpoints) •
+[Testing](#-testing)
 
-| Layer | Technologies |
+</div>
+
+---
+
+## 🌌 Overview
+
+**Portfolix — GitHub Portfolio Intelligence Platform** is a full-stack application designed to help developers understand their GitHub portfolios, explore career-role readiness, evaluate alignment with company expectations, and identify areas for improvement.
+
+By combining GitHub repository data, configurable skill and role profiles, analysis services, and AI-assisted insights, Portfolix aims to make portfolio evaluation more structured and actionable.
+
+### 🎯 The Problem
+
+Developers often have difficulty understanding:
+- Whether their GitHub portfolio communicates their skills effectively.
+- Which technical skills may be missing for a target role.
+- How their portfolio aligns with a company's expectations.
+- What they should focus on learning next.
+
+### 💡 The Solution
+
+Portfolix brings portfolio analysis, role readiness, company analysis, and learning-roadmap generation together in one application.
+
+---
+
+## ✨ Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🔍 GitHub Portfolio Analysis
+Analyze public GitHub profile and repository information to generate structured portfolio insights.
+
+</td>
+<td width="50%">
+
+### 🎯 Role Readiness
+Compare developer skills with configurable role requirements and identify potential skill gaps.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🏢 Company Analysis
+Explore portfolio alignment with configurable company profiles and technical expectations.
+
+</td>
+<td width="50%">
+
+### 🗺️ Learning Roadmaps
+Generate structured improvement roadmaps based on identified development areas.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🧠 AI-Assisted Insights
+Use the configured Gemini integration for AI-assisted analysis, with fallback behavior supported by the backend.
+
+</td>
+<td width="50%">
+
+### ⚡ Full-Stack Architecture
+Connect a React + Vite frontend to a Python FastAPI backend through REST API endpoints.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ System Architecture
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-646CFF?style=for-the-badge" />
+
+⬇️ REST API
+
+<img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge" />
+
+⬇️
+
+<img src="https://img.shields.io/badge/Data%20Source-GitHub%20REST%20API-181717?style=for-the-badge&logo=github" />
+
+<img src="https://img.shields.io/badge/Analysis-Portfolio%20%7C%20Roles%20%7C%20Companies-7C3AED?style=for-the-badge" />
+
+<img src="https://img.shields.io/badge/AI%20Integration-Gemini-4285F4?style=for-the-badge" />
+
+</div>
+
+### 🔄 Application Workflow
+
+1. The user provides a GitHub profile or selects an analysis workflow.
+2. The frontend sends a request to the FastAPI backend.
+3. Backend services retrieve and process the relevant data.
+4. Analysis services evaluate portfolio information, role requirements, or company profiles.
+5. AI-assisted analysis is used where configured and available.
+6. The application returns structured results or a learning roadmap to the frontend.
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
 |---|---|
-| Frontend | React, Vite, JavaScript, CSS |
-| Backend | Python, FastAPI |
-| GitHub Data | GitHub REST API |
-| AI Analysis | Google Gemini API |
+| Frontend | React, Vite, JavaScript |
+| Backend | Python, FastAPI, Pydantic |
+| HTTP Requests | HTTPX |
+| External Data | GitHub REST API |
+| AI Integration | Google Gemini API |
 | Testing | Pytest |
+| Configuration | Environment variables, `.env` |
+| Version Control | Git, GitHub |
 
-## 🧠 How It Works
+---
 
-1. Enter a public GitHub username.
-2. Portfolix retrieves available profile and repository information.
-3. The analysis engine evaluates repository metadata using configurable, rule-based heuristics.
-4. When Gemini is configured, AI-generated insights can supplement the baseline analysis.
-5. Review role readiness, potential skill gaps, and suggested next steps.
+## 📁 Project Structure
 
-**Important:** Scores are heuristic estimates based on available public metadata. They are not measures of a developer's full ability, and they do not predict hiring outcomes.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.10+
-- Node.js 18+
-- Git
-
-### 1. Clone the repository
-
-```powershell
-git clone https://github.com/mallikarajapure-collab/Portfolix.git
-cd Portfolix
+```text
+portfolix/
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── schemas.py
+│   │   ├── catalog.py
+│   │   └── services/
+│   │       ├── github_service.py
+│   │       ├── portfolio_analyzer.py
+│   │       ├── role_analyzer.py
+│   │       ├── company_analyzer.py
+│   │       ├── roadmap_service.py
+│   │       └── llm_service.py
+│   ├── tests/
+│   ├── requirements.txt
+│   └── .env
+│
+└── web/
+    ├── src/
+    │   └── services/
+    │       └── api.js
+    └── package.json
 ```
 
-### 2. Set up the backend
+*The tree highlights the main application modules; other files may exist in the repository.*
+
+---
+
+## ⚙️ Getting Started
+
+### 📋 Prerequisites
+
+Install the following before running the application:
+
+- Python 3.10 or later
+- Node.js 18 or later
+- npm
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+cd portfolix
+```
+
+Replace `YOUR_REPOSITORY_URL` with the HTTPS clone URL of your actual Portfolix repository.
+
+### 2. Set Up the Backend
+
+Open PowerShell in the project root:
 
 ```powershell
 cd backend
+
 python -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-Copy-Item .env.example .env
+
+python -m pip install -r requirements.txt
 ```
 
-Configure your environment variables in `backend/.env` as needed:
+If PowerShell blocks virtual-environment activation, use Command Prompt or configure your PowerShell execution policy appropriately.
+
+### 3. Configure Environment Variables
+
+Create or update `backend/.env` using the variable names supported by `backend/app/config.py`.
+
+Example configuration:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
@@ -70,84 +221,131 @@ GEMINI_MODEL=gemini-2.5-flash
 GITHUB_TOKEN=your_github_token
 ```
 
-The Gemini key is optional if you want to use the rule-based fallback. A GitHub token can help with API rate limits. Keep all real credentials private and never commit `.env`.
+- `GEMINI_API_KEY` enables the configured Gemini integration.
+- `GEMINI_MODEL` selects the Gemini model.
+- `GITHUB_TOKEN` is optional for public GitHub data, but may help with API rate limits.
 
-Start the backend from the `backend` directory:
+**Security:** Never commit your real API keys or tokens. Keep `.env` out of Git and use a safe placeholder in `.env.example`.
+
+### 4. Start the Backend
+
+From the `backend` directory, with the virtual environment activated:
 
 ```powershell
 uvicorn app.main:app --reload --port 8000
 ```
 
-API documentation: [http://localhost:8000/docs](http://localhost:8000/docs)
+Backend URL:
 
-### 3. Set up the frontend
+`http://127.0.0.1:8000`
 
-Open a second terminal:
+Interactive API documentation:
+
+`http://127.0.0.1:8000/docs`
+
+Health check:
+
+`http://127.0.0.1:8000/api/health`
+
+### 5. Start the Frontend
+
+Open a second PowerShell terminal:
 
 ```powershell
-cd web
+cd C:\Users\Malli\Downloads\portfolix\web
+
 npm install
-Copy-Item .env.example .env
+
 npm run dev
 ```
 
-Open the local URL printed by Vite, typically [http://localhost:5173](http://localhost:5173).
+Open the local URL printed by Vite in your terminal.
 
-If Vite chooses another port, ensure that port is allowed in the backend's `CORS_ORIGINS` configuration.
+The frontend uses `VITE_API_URL` when configured and otherwise defaults to `http://localhost:8000`.
 
-## 🔌 API Overview
+If needed, configure the frontend's API URL in `web/.env`:
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `GET` | `/api/health` | Check backend health |
-| `GET` | `/api/roles` | List supported roles |
-| `GET` | `/api/github/{username}` | Retrieve normalized GitHub profile data |
-| `POST` | `/api/portfolio/analyze` | Analyze a developer portfolio |
-| `POST` | `/api/role/readiness` | Evaluate alignment with a target role |
-| `POST` | `/api/company/analyze` | Analyze portfolio alignment with company expectations |
-| `POST` | `/api/roadmap` | Generate improvement recommendations |
-
-## 🧪 Testing
-
-Run backend tests from the `backend` directory:
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest -q
+```env
+VITE_API_URL=http://localhost:8000
 ```
 
-Run a frontend production build from the `web` directory:
-
-```powershell
-npm run build
-```
-
-## 🔐 Security & Privacy
-
-- Store API keys in local environment files.
-- Never commit `.env` files, API credentials, or other secrets.
-- Use public GitHub data only as intended by the GitHub API and its applicable limits.
-- Treat AI-generated output as advisory and verify important recommendations independently.
-
-## 🗺️ Roadmap
-
-- [x] Core frontend and backend integration
-- [x] GitHub profile and repository analysis
-- [x] Role readiness and portfolio recommendations
-- [x] Gemini integration with rule-based fallback
-- [x] Initial backend testing
-- [ ] Expand testing across more GitHub profiles and edge cases
-- [ ] Refine UI and improve error handling
-- [ ] Explore deployment options
-
-## 🤝 Contributions
-
-Suggestions, bug reports, and ideas for improvement are welcome. This project is actively evolving, so feedback is appreciated.
-
-## 👩‍💻 Author
-
-**Mallika**  
-GitHub: [@mallikarajapure-collab](https://github.com/mallikarajapure-collab)
+Restart the Vite development server after changing environment variables.
 
 ---
 
-*Built to help developers turn their GitHub portfolios into clearer, more actionable growth plans.*
+## 🔌 API Endpoints
+
+The backend provides the following application endpoints:
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /api/health` | Check backend health and configuration status |
+| `POST /api/portfolio/analyze` | Analyze a GitHub portfolio |
+| `POST /api/role/readiness` | Evaluate readiness for a target role |
+| `POST /api/company/analyze` | Analyze alignment with a company profile |
+| `POST /api/roadmap` | Generate a learning roadmap |
+
+For exact request schemas, required fields, and response formats, run the backend and open `/docs`.
+
+---
+
+## 🧪 Testing
+
+Run the backend test suite from the `backend` directory:
+
+```powershell
+python -m pytest -q
+```
+
+Tests cover backend API behavior and relevant success, error, empty-profile, and AI fallback scenarios.
+
+---
+
+## 🔐 Security & Reliability
+
+- Store API keys in environment variables, never in source code.
+- Keep secrets out of commits and public repository history.
+- Validate API requests using backend schemas.
+- Handle external API failures gracefully.
+- Use fallback behavior when AI-assisted analysis is unavailable.
+- Avoid exposing private tokens, personal data, or sensitive logs.
+
+---
+
+## 🗺️ Project Roadmap
+
+- [x] FastAPI backend foundation
+- [x] GitHub portfolio analysis service
+- [x] Role readiness analysis
+- [x] Company analysis service
+- [x] Learning roadmap service
+- [x] Gemini integration with fallback behavior
+- [ ] Add verified application screenshots and demo
+- [ ] Expand test coverage and integration checks
+- [ ] Further improve analysis quality and user experience
+
+*Roadmap items should be updated as implementation progresses.*
+
+---
+
+## 👩‍💻 About the Developer
+
+**Mallika Rajapure**
+
+MCA student specializing in Artificial Intelligence and Machine Learning, interested in Python development, AI/ML, and software engineering.
+
+Portfolix is part of my journey toward building practical, well-structured software applications.
+
+<div align="center">
+
+<a href="https://github.com/mallikarajapure-collab">
+  <img src="https://img.shields.io/badge/GitHub-Explore%20My%20Work-181717?style=for-the-badge&logo=github" />
+</a>
+
+<br/><br/>
+
+*Built with curiosity, code, and a vision for smarter developer growth. 💜*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,50:5B21B6,100:10002B&height=110&section=footer" width="100%" />
+
+</div>
