@@ -6,3 +6,22 @@ __pycache__/
 .venv/
 
 *.bak
+
+# Expo mobile generated files
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/.expo-shared/
+
+# Mobile backup files
+mobile/app.before-*.json
+mobile/eas.before-*.json
+mobile/src/app/*.backup.tsx
+mobile/src/app/*.before-*.tsx
+
+# Capacitor Android local and generated files
+web/android/.gradle/
+web/android/.idea/
+web/android/local.properties
+web/android/**/build/
